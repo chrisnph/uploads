@@ -1,10 +1,13 @@
 {
-	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
 	// Example:
 	// "Print to console": {
+	// 	"scope": "javascript,typescript",
 	// 	"prefix": "log",
 	// 	"body": [
 	// 		"console.log('$1');",
@@ -13,24 +16,57 @@
 	// 	"description": "Log output to console"
 	// }
 	"Console Log": {
-		"prefix": "c",
-		"body": [
-			"console.log($1)",
-		]
+	  "prefix": "c",
+	  "body": ["console.log($1)"]
+	},
+	"Console Clear": {
+	  "prefix": "cc",
+	  "body": ["console.clear()"]
+	},
+	"React Typescript Function Component": {
+	  "prefix": "rts",
+	  "body": [
+		"import React from 'react';",
+		"import './style.scss'",
+		"",
+		"const $1: React.FC<$1Props> = (props) => {",
+		"\treturn(",
+		"\t\t$2",
+		"\t);",
+		"}",
+		"",
+		"",
+		"export default $1;"
+	  ],
+	  "description": "React Typescript Function Component"
 	},
 	"React Function Component": {
-		"prefix": "rf",
-		"body": [
-			"import React from 'react';",
-			"",
-			"const $1 = () => {",
-			"\treturn(",
-			"\t\t$2",
-			"\t);",
-			"}",
-			"",
-			"",
-			"export default $1;",
-		]
+	  "prefix": "rf",
+	  "body": [
+		"import React from 'react';",
+		"",
+		"const $1 = () => {",
+		"\treturn(",
+		"\t\t$2",
+		"\t);",
+		"}",
+		"",
+		"",
+		"export default $1;"
+	  ]
+	},
+	"New Promise": {
+	  "prefix": "np",
+	  "body": [
+		"return new Promise(async (resolve, reject) => {",
+		"\ttry {",
+		"\t\t$1",
+		"\t}",
+		"\tcatch(error) {",
+		"\t\treject(error);",
+		"\t}",
+		"});"
+	  ]
 	}
-}
+  }
+  
